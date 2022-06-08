@@ -59,6 +59,7 @@ constructor(props) {
             // </div>
 
             <div>
+                <section>
                 <div className='container'>
                     <div className='row'>
                         <div className='card-body'>
@@ -111,6 +112,7 @@ constructor(props) {
                         </div>
                     </div>
                 </div>
+                </section>
             </div>
         )
     }
