@@ -10,7 +10,10 @@ class DataService {
     return axios.post(Service_Url + "/Auth/CreateUser", user);
   }
   sendOTP(user){
-    return axios.post(Service_Url + "/Auth/SendOtp", user)
+    return axios.post(Service_Url + "/Auth/SendOtp?uid="+user);
+  }
+  LoginUser(user){
+    return axios.post(Service_Url + "/Auth/Authenticate", user);
   }
 }
 

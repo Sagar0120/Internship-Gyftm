@@ -28,7 +28,10 @@ constructor(props) {
 
         DataService.createUser(user).then(Response => {
             console.log(Response);
-            DataService.sendOTP(Response.uid).then(Resp => {
+            let res = JSON.stringify(Response);
+            console.log("user id : ", res.id);
+            
+            DataService.sendOTP(res.id).then(Resp => {
                 console.log(Resp);
             })
         })
