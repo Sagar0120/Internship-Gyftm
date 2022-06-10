@@ -1,84 +1,56 @@
-import React from "react";
-import DataService from "../Service/DataService";
+import React, { useState } from "react";
+import axios from "axios";
+export default function Login() {
+  const API_URL = "https://api.shilpimultiplex.com/api/Auth/";
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
 
-    this.state = {
-      phone: "",
-      password: "",
-    };
-    this.changephonehandler = this.changephonehandler.bind(this);
-    this.changepasshandler = this.changepasshandler.bind(this);
-  }
+  function Login(event) {
+    let item = {phoneNumber, password};
+    console.log(item);
+    event.preventDefault();
 
-  saveUser = (e) => {
-    if (e && e.preventDefault) {
-      e.preventDefault();
-      e.persist();
-    }
-
-    let user = { phone: this.state.phone, password: this.state.password };
-    console.log("user => " + JSON.stringify(user));
-
-    DataService.LoginUser(user).then((Response) => {
-      console.log("result", Response);
+    axios.post(API_URL + "Authenticate", item).then((result) => {
+      console.log(result.data);
     });
-  };
-
-  changephonehandler = (event) => {
-    this.setState({ phone: event.target.value });
-  };
-
-  changepasshandler = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  render() {
-    return (
-      <div>
-        <section>
-          <div className="container">
-            <div className="row">
-              <div className="card-body">
-                <form>
-                  <div className="form-group">
-                    <label>Phone : </label>
-                    <input
-                      placeholder="phone"
-                      name="phone"
-                      className="form-control"
-                      value={this.state.phone}
-                      onChange={this.changephonehandler}
-                    />
-                  </div>
-                  <p> </p>
-                  <div className="form-group">
-                    <label>Password : </label>
-                    <input
-                      type="password"
-                      placeholder="password"
-                      name="password"
-                      className="form-control"
-                      value={this.state.password}
-                      onChange={this.changepasshandler}
-                    />
-                  </div>
-                  <p> </p>
-                  <div className="text-center">
-                    <button className="btn btn-success" onClick={this.saveUser}>
-                      Sign In
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
   }
-}
 
-export default Login;
+  return (
+    <div>
+      <section>
+      <form>
+        <h5>Sign In</h5>
+        <div>
+          <label>Phone Number</label>
+          <div>
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+        <div>
+          <label>Password</label>
+          <div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+          </div>
+        </div>
+
+        <button type="submit" onClick={Login}>
+          Sign in
+        </button>
+      </form>
+      </section>
+    </div>
+  );
+}
