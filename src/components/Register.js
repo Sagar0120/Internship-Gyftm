@@ -28,7 +28,14 @@ constructor(props) {
 
         DataService.createUser(user).then(Response => {
             console.log(Response);
+            DataService.sendOTP(Response.uid).then(Resp => {
+                console.log(Resp);
+            })
         })
+
+        // "a81c54b9-b10d-428f-b721-9398a97af022"
+        //let Uid = {uid : Object.uid}
+        
     }
 
     changenamehandler = (event) => {
@@ -96,7 +103,7 @@ constructor(props) {
                                 <p> </p>
                                 <div className='form-group'>
                                     <label>Password : </label>
-                                    <input
+                                    <input type = "password"
                                     placeholder='password'
                                     name="password"
                                     className='form-control'

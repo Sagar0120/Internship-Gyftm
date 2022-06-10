@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const Service_Url='https://api.gyftm.in/api'
+const Service_Url='https://api.shilpimultiplex.com/api'
+
+///Auth/CreateUser
+
 
 class DataService {
   createUser(user) {

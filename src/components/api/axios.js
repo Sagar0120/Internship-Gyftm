@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://api.gyftm.in/api'
+    baseURL: 'http://api.gyftm.in/api'
 });
