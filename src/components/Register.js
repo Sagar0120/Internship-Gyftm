@@ -64,6 +64,7 @@ class Register extends React.Component {
         if (result.request.status === 200) {
           console.log(result);
         }
+        alert(result.data.message);
       })
       .catch((error) => {
         console.log(error);
