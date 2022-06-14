@@ -6,7 +6,7 @@ const API_URL = "https://api.shilpimultiplex.com/api/Auth/";
 
 //const [otp, setOtp] = useState('');
 
-export const Uid = "";
+let Uid = "";
 
 class Register extends React.Component {
   constructor(props) {

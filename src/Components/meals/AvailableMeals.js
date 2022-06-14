@@ -26,7 +26,7 @@ export default function AvailableMeals(props) {
                 <h3>{meal.productName}</h3>
                 <img src={meal.imagePath} alt="..." />
                 <div className={classes.description}>{meal.desc}</div>
-                <div className={classes.price}>{meal.price}</div>
+                <div className={classes.price}>{meal.price}$</div>
               </div>
             </li>
           ))}
