@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './style.css';
 
 export default function Login() {
   const API_URL = "https://api.shilpimultiplex.com/api/Auth/";
@@ -9,17 +10,17 @@ export default function Login() {
 
   function Login(event) {
     let item = {phoneNumber, password};
-    console.log(item);
+    //console.log(item);
     event.preventDefault();
 
     axios.post(API_URL + "Authenticate", item).then((result) => {
-      console.log(result.data);
+      console.log(result);
     });
   }
 
   return (
-    <div>
-      <section>
+    <div className="body1">
+      <section id="sec">
       <form>
         <h5>Sign In</h5>
         <div>

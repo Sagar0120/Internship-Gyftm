@@ -94,7 +94,7 @@ class Register extends React.Component {
   render() {
     return (
       <>
-        <section>
+        <section id="sec">
           <form>
             <label>Name : </label>
             <input
@@ -104,7 +104,7 @@ class Register extends React.Component {
               value={this.state.name}
               onChange={this.changenamehandler}
             />
-
+            <p></p>
             <label>Email : </label>
             <input
               placeholder="Email"
@@ -113,7 +113,7 @@ class Register extends React.Component {
               value={this.state.email}
               onChange={this.changemailhandler}
             />
-
+            <p></p>
             <label>Phone : </label>
             <input
               placeholder="phone"
@@ -122,7 +122,7 @@ class Register extends React.Component {
               value={this.state.phone}
               onChange={this.changephonehandler}
             />
-
+            <p></p>
             <label>Password : </label>
             <input
               type="password"
@@ -132,12 +132,13 @@ class Register extends React.Component {
               value={this.state.password}
               onChange={this.changepasshandler}
             />
-
+            <p></p>
             <button className="btn btn-success" onClick={this.saveUser}>
               Create user
             </button>
           </form>
         </section>
+        <section id="sec">
         <form>
           {/*modal for otp*/}
           <h5>Enter your OTP</h5>
@@ -150,6 +151,7 @@ class Register extends React.Component {
             Ok
           </button>
         </form>
+        </section>
       </>
     );
   }

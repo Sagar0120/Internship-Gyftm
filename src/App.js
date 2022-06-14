@@ -1,7 +1,6 @@
 import Register from './Components/Register.js';
 import Login from './Components/Login';
 //import { useState } from "react";
-import Header from "./Components/layout/Header";
 import Meals from "./Components/meals/Meals";
 //import Cart from "./Components/Cart/Cart";
 //import CartProvider from './store/CartProvider';

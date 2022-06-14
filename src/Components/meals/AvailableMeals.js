@@ -18,20 +18,22 @@ export default function AvailableMeals(props) {
 
   return (
     <section className={classes.meals}>
-      <Card>
+      <br />
+      <br />
         <ul>
           {data.map((meal) => (
-            <li className={classes.meal}>
-              <div>
+            <div className={classes.meal}>
+              <Card>
                 <h3>{meal.productName}</h3>
-                <img src={meal.imagePath} alt="..." />
+                <img src={meal.imagePath} alt="" />
                 <div className={classes.description}>{meal.desc}</div>
                 <div className={classes.price}>{meal.price}$</div>
-              </div>
-            </li>
+                <br />
+              </Card>
+              <br />
+            </div>
           ))}
         </ul>
-      </Card>
     </section>
   );
 }
