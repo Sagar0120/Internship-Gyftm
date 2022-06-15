@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './style.css';
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const API_URL = "https://api.shilpimultiplex.com/api/Auth/";
@@ -48,9 +49,9 @@ export default function Login() {
           </div>
         </div>
 
-        <button type="submit" onClick={Login}>
+        <Link to="/"><button type="submit" onClick={Login}>
           Sign in
-        </button>
+        </button></Link>
       </form>
       </section>
     </div>

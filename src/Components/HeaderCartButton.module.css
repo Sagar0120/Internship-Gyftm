@@ -2,15 +2,14 @@
     cursor: pointer;
     font: inherit;
     border: none;
-    background-color: #4d1601;
+    background-color: black;
     color: white;
-    padding: 0.75rem 3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 25px;
     font-weight: bold;
-    margin: 180px;
+    margin: 27px;
   }
   
   .button:hover,
@@ -25,7 +24,7 @@
   }
   
   .badge {
-    background-color: #b94517;
+    background-color: green;
     padding: 0.25rem 1rem;
     border-radius: 25px;
     margin-left: 2rem;
