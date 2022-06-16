@@ -3,22 +3,6 @@ import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
 import CartContext from '../../store/cart-context';
-//import Uid from '../Register';
-//import axios from "axios";
-
-
-/*function Cart1(event) {
-    event.preventDefault();
-
-    axios.post("https://api.shilpimultiplex.com/api/Cart/GetCartItems/" + Uid).then((result) => {
-      console.log(result.data);
-      const total = result.data.total;
-      const hasItems = result.items.length > 0;
-    });
-  }*/
-
-
-
 
 const Cart = props => {
     const cartCtx = useContext(CartContext);
@@ -26,9 +10,13 @@ const Cart = props => {
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.items.length > 0;
 
-    const cartItemRemoveHandler = id => {};
+    const cartItemRemoveHandler = id => {
+        cartCtx.removeItem(id);
+    };
 
-    const cartItemAddHandler = item => {};
+    const cartItemAddHandler = item => {
+        cartCtx.addItem({...item, amount:1})
+    };
 
     const cartItems = (
         <ul className={classes['cart-items']}>

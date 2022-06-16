@@ -10,7 +10,7 @@ const AvailableMeals = (props) => {
   const [data, setData] = useState([]);
   axios.get(API_URL + props.Uid).then(function (result) {
     setData(result.data);
-    console.log(data);
+    //console.log(data);
   });
 
   const mealsList = data.map((meal) => (
